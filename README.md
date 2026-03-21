@@ -1,3 +1,21 @@
+# installation script
+
+
+```bash
+uv venv --python 3.12 --seed --managed-python
+source .venv/bin/activate
+VLLM_USE_PRECOMPILED=1 uv pip install -e .
+uv pip install pre-commit>=4.5.1 pytest pytest-asyncio tblib
+```
+
+# header
+
+```bash
+export NCCL_P2P_DISABLE=1
+export CUDA_DEVICE_ORDER=PCI_BUS_ID
+export CUDA_VISIBLE_DEVICES=8,9
+```
+
 <!-- markdownlint-disable MD001 MD041 -->
 <p align="center">
   <picture>
